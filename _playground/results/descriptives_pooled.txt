@@ -1,0 +1,6 @@
+Pooled descriptives, all failed runs (n = 1184)
+
+Variable       Median       Q1       Q3      IQR
+m                27.0     14.0     48.0     34.0
+t_err             7.0      4.0     14.0     10.0
+fix_window        1.0      0.0      8.0      8.0

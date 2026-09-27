@@ -1,0 +1,8 @@
+Check                            Expected      Got  Result
+Failed runs                          1184     1184  OK
+spec_neglect                          176      176  OK
+Silent (all failed runs)              332      332  OK
+Tasks                                  89       87  DIFFERENT
+Negative fix_window                     0        0  OK
+Missing t_err, t_commit, or m           0        0  OK
+Silent rate: 28.0% (expected 28.0%)

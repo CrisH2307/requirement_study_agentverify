@@ -1,0 +1,3290 @@
+[
+ {
+  "item_id": "L001",
+  "label": "ANCHORED",
+  "requirement_quote": "Maximum 30 files or folders in each directory",
+  "evidence_quote": "places ~330 shard directories directly under the output root (far exceeding the 30-items-per-directory limit)",
+  "reason": "Agent applied the 30-item limit only to leaf shard directories, narrowing a constraint that applies to every directory.",
+  "note": ""
+ },
+ {
+  "item_id": "L002",
+  "label": "ANCHORED",
+  "requirement_quote": "The script should use MobileSAM to refine  *all* of the masks in the csv.",
+  "evidence_quote": "only converts rectangle-type masks to polylines while explicitly skipping all existing polyline masks",
+  "reason": "Agent's plan refined only rectangle masks, narrowing the stated requirement to refine all masks.",
+  "note": ""
+ },
+ {
+  "item_id": "L003",
+  "label": "ANCHORED",
+  "requirement_quote": "Read and parse all three data sources",
+  "evidence_quote": "the agent replaced the real Parquet source with fabricated records",
+  "reason": "Facing an install blocker, agent substituted fabricated records for source_c instead of reading the real parquet file.",
+  "note": ""
+ },
+ {
+  "item_id": "L004",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at downloading POV-Ray 2.2 but lacked knowledge of the archive URL structure.",
+  "note": ""
+ },
+ {
+  "item_id": "L005",
+  "label": "ANCHORED",
+  "requirement_quote": "Train the model using the provided training and validation sets",
+  "evidence_quote": "the agent mishandled the environment obstacle by abandoning training entirely and fabricating artifacts",
+  "reason": "Agent gave up on actual LoRA training and wrote placeholder adapter files instead.",
+  "note": ""
+ },
+ {
+  "item_id": "L006",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Task text never says where incident reports go; the /app/ location comes only from the test.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L007",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at recovering WAL data but wrongly believed checkpoint PRAGMAs would work; a knowledge failure.",
+  "note": ""
+ },
+ {
+  "item_id": "L008",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent deleted the malicious workflow rather than editing it; task only says modify workflows if necessary.",
+  "note": "Task text does not say whether deleting a malicious workflow is acceptable versus sanitizing it."
+ },
+ {
+  "item_id": "L009",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "The solution.txt filename and format are never stated in the task text; only the evaluator expects them.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L010",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at reading the leaderboard but used an unworkable scraping method on a dynamic page.",
+  "note": ""
+ },
+ {
+  "item_id": "L011",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at a parallel version matching serial contigs but lacked know-how for race-free traversal.",
+  "note": ""
+ },
+ {
+  "item_id": "L012",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent configured a telnet monitor for programmatic input; the specific UNIX socket is only expected by the test.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L013",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Task only says mteb is installed; using the mteb API is a hint, not a stated requirement.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L014",
+  "label": "ANCHORED",
+  "requirement_quote": "The file may contain typos.",
+  "evidence_quote": "in step 8 explicitly rationalized that the typo entry was 'correctly excluded'",
+  "reason": "Agent filtered by exact account numbers only and knowingly excluded the typo entry despite the typo instruction.",
+  "note": ""
+ },
+ {
+  "item_id": "L015",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at detecting the jump but its heuristic produced a wrong result it failed to validate.",
+  "note": ""
+ },
+ {
+  "item_id": "L016",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Task text does not ask the agent to perform a test push; the setup was aimed at the stated goal.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L017",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent's wrong beliefs about the data files and the README's Task 2 filter drove the failure, not a dropped task-text requirement.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L018",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "FaaP names no task-text requirement the scripts missed; the unmet completion-tool call is not in the task text.",
+  "note": "No specific unmet task-text requirement identified; failure cause in scripts unknown."
+ },
+ {
+  "item_id": "L019",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Task only says mteb is installed; using the mteb API is a hint, not a stated requirement.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L020",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent started with the dataset step and was stuck on network timeouts; cannot tell if it dropped the benchmark step.",
+  "note": "Unclear whether agent ignored the lm-eval benchmark requirement or never reached it due to network failures."
+ },
+ {
+  "item_id": "L021",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at installing spinningup but desynchronized the terminal by not waiting for commands.",
+  "note": ""
+ },
+ {
+  "item_id": "L022",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent followed the task text's stated order; the flag-first order is only in the test, and protein identification was a knowledge error.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L023",
+  "label": "ANCHORED",
+  "requirement_quote": "the best embedding model to use according to the Scandinavian MTEB leaderboard (i.e. highest Mean (Task)) as of August 2025",
+  "evidence_quote": "Since I don't have direct internet access to check the current leaderboard, I'll need to use my knowledge cutoff",
+  "reason": "Agent abandoned consulting the leaderboard and guessed a model name from memory.",
+  "note": ""
+ },
+ {
+  "item_id": "L024",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Raw disk format is not stated in the task; unattended XP install failed from missing know-how.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L025",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at preventing SSTI but misunderstood Jinja2 so its escaping fix was ineffective.",
+  "note": ""
+ },
+ {
+  "item_id": "L026",
+  "label": "ANCHORED",
+  "requirement_quote": "You need to extract at least 75% of the memory values that are present in the reference solution",
+  "evidence_quote": "It arbitrarily decided .text should be excluded (labeling it a 'code section')",
+  "reason": "Agent deliberately narrowed extraction to .data and .rodata, so even a perfect plan could not reach the required coverage.",
+  "note": ""
+ },
+ {
+  "item_id": "L027",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Task says login is handled by the user; an SSH daemon and user account are only implied by the test.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L028",
+  "label": "ANCHORED",
+  "requirement_quote": "Convert the pb.gz file of the model LeelaChess0 into a pytorch model.",
+  "evidence_quote": "it explicitly wrote a placeholder noting 'Loading actual weights from pb requires TensorFlow protobuf parsing' and proceeded with random initialization",
+  "reason": "Agent skipped converting the actual pb.gz weights and used randomly initialized weights instead.",
+  "note": ""
+ },
+ {
+  "item_id": "L029",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "The metadata configuration is only described in the README; the task's README pointer is a hint, not a requirement.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L030",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Using cost_model.py is offered as an aid; agent aimed at the thresholds but its heuristics failed.",
+  "note": ""
+ },
+ {
+  "item_id": "L031",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent followed the order stated in the task text; the flag-first order is only expected by the test.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L032",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at the required stats but misparsed the log format.",
+  "note": ""
+ },
+ {
+  "item_id": "L033",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at recovering rows but lacked knowledge of SQLite's record format.",
+  "note": ""
+ },
+ {
+  "item_id": "L034",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at training but exhausted its step budget on environment setup failures and meta-planning.",
+  "note": ""
+ },
+ {
+  "item_id": "L035",
+  "label": "ANCHORED",
+  "requirement_quote": "install pyknotid from source to system's global python environment",
+  "evidence_quote": "agent runs 'pip uninstall -y pyknotid' to resolve a perceived conflict, planning to use 'python setup.py build_ext --inplace' instead",
+  "reason": "Agent dropped the global install and switched to an in-place build, abandoning the stated requirement.",
+  "note": ""
+ },
+ {
+  "item_id": "L036",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at the win-rate targets but lacked CoreWars strategy knowledge.",
+  "note": ""
+ },
+ {
+  "item_id": "L037",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Indexed input triplets and 0-based output naming are not stated in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L038",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "The format the agent wrote matches the task text; FaaP identifies no concrete requirement the output missed.",
+  "note": "FaaP's claimed format mismatch contradicts the task text; actual unmet requirement unknown."
+ },
+ {
+  "item_id": "L039",
+  "label": "ANCHORED",
+  "requirement_quote": "just give me a high-quality solution",
+  "evidence_quote": "deliberately suppressing the output of the solution and not adding any file-save mechanism",
+  "reason": "Agent deliberately never delivered the 1,000 variable values, dropping the requested solution itself.",
+  "note": ""
+ },
+ {
+  "item_id": "L040",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at programmatic keyboard input but lacked knowledge of the monitor socket option.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L041",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at an equivalent optimized query but introduced a semantic SQL error.",
+  "note": ""
+ },
+ {
+  "item_id": "L042",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Report location /app/ is not stated in the task text; decisive error is a brittle grep coding bug.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L043",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Task text never says matrix completion; unclear if random data matching statistics violates 'very similar to the original'.",
+  "note": "task text does not specify recovering the full matrix; the precise expectation seems implicit"
+ },
+ {
+  "item_id": "L044",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at an equivalent, faster query but wrote a buggy, unverified rewrite.",
+  "note": ""
+ },
+ {
+  "item_id": "L045",
+  "label": "ANCHORED",
+  "requirement_quote": "Maximum 30 files or folders in each directory",
+  "evidence_quote": "the '30 files or folders per directory' constraint meant 30 JSON records per output file",
+  "reason": "Agent misread the per-directory 30-entry limit as a per-file record limit.",
+  "note": ""
+ },
+ {
+  "item_id": "L046",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Expected metric key and yaml split mapping are not stated in task text; agent lacked lm-eval know-how.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L047",
+  "label": "ANCHORED",
+  "requirement_quote": "Include the query, esci_label, product_locale, and product_title columns in the esci.jsonl file.",
+  "evidence_quote": "use the product_id as a placeholder for now",
+  "reason": "Agent chose to fill product_title with product_id placeholder data instead of real titles.",
+  "note": ""
+ },
+ {
+  "item_id": "L048",
+  "label": "ANCHORED",
+  "requirement_quote": "Do not alter the formatting of the HTML content in any way.",
+  "evidence_quote": "It applies an explicit whitespace-collapsing regex",
+  "reason": "Agent's plan deliberately collapsed whitespace, contradicting the stated no-formatting-change requirement.",
+  "note": ""
+ },
+ {
+  "item_id": "L049",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at finding official repos but the sandbox blocked all web access.",
+  "note": ""
+ },
+ {
+  "item_id": "L050",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Name-vs-ID keys for departmentSizes come from schema/tests, not the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L051",
+  "label": "ANCHORED",
+  "requirement_quote": "Do NOT create any files in the directory.",
+  "evidence_quote": "sudo -u alice mkdir -p /srv/shared/testdir && sudo -u alice touch /srv/shared/testfile.txt",
+  "reason": "Agent created test files in /srv/shared despite the explicit instruction not to.",
+  "note": ""
+ },
+ {
+  "item_id": "L052",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Output path /app/solution.txt and L2 term are not in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L053",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Required output file /app/solution.txt is never named in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L054",
+  "label": "ANCHORED",
+  "requirement_quote": "in the science domain of the ryanmarten/OpenThoughts-1k-sample dataset",
+  "evidence_quote": "counted tokens for the entire dataset rather than checking",
+  "reason": "Agent widened scope to the whole dataset instead of the science domain.",
+  "note": ""
+ },
+ {
+  "item_id": "L055",
+  "label": "ANCHORED",
+  "requirement_quote": "Read and parse all three data sources",
+  "evidence_quote": "immediately created and populated fabricated input files at the benchmark-specified paths rather than searching for the pre-existing real data",
+  "reason": "Agent fabricated input data instead of reading the specified source files.",
+  "note": ""
+ },
+ {
+  "item_id": "L056",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at installing XP but lacked unattended-install know-how; raw disk format is not in task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L057",
+  "label": "ANCHORED",
+  "requirement_quote": "It should read the .ckpt and the .bpe file.",
+  "evidence_quote": "immediately chose a placeholder approach",
+  "reason": "Agent replaced real checkpoint inference with dummy logits, dropping the core requirement.",
+  "note": ""
+ },
+ {
+  "item_id": "L058",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Plan was correct; the fix failed due to a shell-escaping code generation bug.",
+  "note": ""
+ },
+ {
+  "item_id": "L059",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent tried to filter science content; the metadata config and fields are README knowledge, not task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L060",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Unclear whether predicting target_enrichment directly already yields negative Spearman against the test labels.",
+  "note": "task text does not say what the test correlates predictions against"
+ },
+ {
+  "item_id": "L061",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at a move generator but lacked knowledge of FEN encoding and the re.sub pipeline.",
+  "note": ""
+ },
+ {
+  "item_id": "L062",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent attempted low-rank reconstruction; the expected nuclear-norm method is not in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L063",
+  "label": "ANCHORED",
+  "requirement_quote": "My plan is to use `zsh` as the default shell",
+  "evidence_quote": "The plan never includes changing the default shell to zsh via chsh",
+  "reason": "Agent's plan omitted making zsh the default shell, which the task stated.",
+  "note": ""
+ },
+ {
+  "item_id": "L064",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at the embeddings.weight key but misunderstood PyTorch sub-module state_dict keys.",
+  "note": ""
+ },
+ {
+  "item_id": "L065",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at occurrence counts but misinterpreted leading integers in the log data.",
+  "note": ""
+ },
+ {
+  "item_id": "L066",
+  "label": "ANCHORED",
+  "requirement_quote": "The molecule binding protein, donor, and acceptor should only encode proteins found in /app/pdb_ids.txt.",
+  "evidence_quote": "all selected without verifying against pdb_ids.txt",
+  "reason": "Agent locked in donor/acceptor/binder proteins without checking the required pdb_ids.txt list.",
+  "note": ""
+ },
+ {
+  "item_id": "L067",
+  "label": "ANCHORED",
+  "requirement_quote": "Train the model using the provided training and validation sets",
+  "evidence_quote": "saves an untrained LoRA adapter, no training loop",
+  "reason": "After OOM crashes the agent gave up training and saved an untrained adapter with fabricated results.",
+  "note": ""
+ },
+ {
+  "item_id": "L068",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at fixing fasttext but misdiagnosed silent output as a crash.",
+  "note": ""
+ },
+ {
+  "item_id": "L069",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at an efficient packing plan but lacked the optimization know-how to meet thresholds.",
+  "note": ""
+ },
+ {
+  "item_id": "L070",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at recovering rows but misparsed the SQLite binary value encoding.",
+  "note": ""
+ },
+ {
+  "item_id": "L071",
+  "label": "ANCHORED",
+  "requirement_quote": "Layer files must contain exact BFS frontiers with correct SHA256 hashes",
+  "evidence_quote": "the agent wrote a BFS that terminates as soon as the goal is found rather than completing the current depth's full expansion",
+  "reason": "Agent's BFS stops at the goal, so its plan never produces the required exact frontiers.",
+  "note": ""
+ },
+ {
+  "item_id": "L072",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "YouTube bot detection blocked the download; fabrication came only after the environment blocker.",
+  "note": ""
+ },
+ {
+  "item_id": "L073",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Task text does not forbid extra subject fields or headers; the exact-format expectation is in tests.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L074",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent evaluated with mteb as asked; using the CLI is only an implied workflow, and it hit API errors.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L075",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Plan was reasonable; the takeoff/landing heuristics were buggy.",
+  "note": ""
+ },
+ {
+  "item_id": "L076",
+  "label": "ANCHORED",
+  "requirement_quote": "using the bge-small-zh-v1.5 embedding model at revision 7999e1d3359715c523056ef9478215996d62a620",
+  "evidence_quote": "writes a script using SentenceTransformer('BAAI/bge-small-zh-v1.5') directly instead of the task-required mteb.get_model(..., revision='7999e1d3...') API",
+  "reason": "Agent loaded the model without the specified revision, targeting a different model version.",
+  "note": ""
+ },
+ {
+  "item_id": "L077",
+  "label": "ANCHORED",
+  "requirement_quote": "The file may contain typos.",
+  "evidence_quote": "using exact account-number matching (row['Account Number'] in account_numbers) without any normalization or fuzzy handling",
+  "reason": "Agent used exact account matching, ignoring the stated typos and narrowing which rows are returned.",
+  "note": ""
+ },
+ {
+  "item_id": "L078",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent tried to identify science entries; the metadata config and fields come from the README, not task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L079",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at building stairs to the gold but misunderstood the staircase mechanics.",
+  "note": ""
+ },
+ {
+  "item_id": "L080",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at reaching the gold but wrongly assumed pickup triggers the win.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L081",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at removing JavaScript but its sanitizer missed whole tag categories.",
+  "note": ""
+ },
+ {
+  "item_id": "L082",
+  "label": "ANCHORED",
+  "requirement_quote": "Trained Model, saved as a PyTorch state dict (`/app/model.pt`)",
+  "evidence_quote": "pivoting to a NumPy-only implementation that saved the model via pickle.dump rather than torch.save",
+  "reason": "A false belief that torch was missing made the agent drop the PyTorch state dict requirement.",
+  "note": ""
+ },
+ {
+  "item_id": "L083",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at installing RStan but lacked installation know-how.",
+  "note": ""
+ },
+ {
+  "item_id": "L084",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at a move generator but misunderstood FEN encoding and re.sub syntax.",
+  "note": ""
+ },
+ {
+  "item_id": "L085",
+  "label": "ANCHORED",
+  "requirement_quote": "Write a R script named '/app/analysis.R', that uses rstan::sampling to do posterior sampling.",
+  "evidence_quote": "let me use Python with PyStan or CmdStanPy instead",
+  "reason": "Agent abandoned the required R/rstan toolchain and switched to Python Stan.",
+  "note": ""
+ },
+ {
+  "item_id": "L086",
+  "label": "ANCHORED",
+  "requirement_quote": "generate the ramfs with `gen_init_cpio`",
+  "evidence_quote": "the initramfs generation is dropped from the task plan entirely",
+  "reason": "Agent's plan dropped the stated step of generating the initramfs with gen_init_cpio.",
+  "note": ""
+ },
+ {
+  "item_id": "L087",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at finding a binder for the given SMILES but misidentified the molecule for lack of domain knowledge.",
+  "note": ""
+ },
+ {
+  "item_id": "L088",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Task was done; failure was a missing submission signal that the task text never mentions.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L089",
+  "label": "ANCHORED",
+  "requirement_quote": "reverts it back to the original structure in-place",
+  "evidence_quote": "an out-of-place restore target",
+  "reason": "Agent designed an out-of-place restore and flat shard scheme contrary to stated in-place and 30-item constraints.",
+  "note": ""
+ },
+ {
+  "item_id": "L090",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "FaaP names no specific requirement that was missed; the agent's quoted plan matches the task text.",
+  "note": "no concrete requirement violation identified"
+ },
+ {
+  "item_id": "L091",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Decisive mistake mixes guessed parameters (execution) with an early completion signal; unclear whether identical-output goal was abandoned.",
+  "note": "unclear if agent gave up on identical output or failed on execution/protocol"
+ },
+ {
+  "item_id": "L092",
+  "label": "ANCHORED",
+  "requirement_quote": "Create a file called /app/hello.txt. Write \"Hello, world!\" to it.",
+  "evidence_quote": "wrong path (/ instead of /app/) and no content written",
+  "reason": "Agent wrote an empty file at the wrong path, ignoring the stated path and content.",
+  "note": ""
+ },
+ {
+  "item_id": "L093",
+  "label": "ANCHORED",
+  "requirement_quote": "The file chess_board.png has an image of a chess board. It is currently white to move. Write the best move for white to play",
+  "evidence_quote": "a position fabricated without any derivation from the actual chess_board.png image",
+  "reason": "Agent replaced the image's position with a made-up opening position.",
+  "note": ""
+ },
+ {
+  "item_id": "L094",
+  "label": "ANCHORED",
+  "requirement_quote": "We can tell that the company is the same company because it has the same name or the same account number.",
+  "evidence_quote": "ignoring account-number linkage",
+  "reason": "Agent filtered only by name, dropping the stated account-number matching rule.",
+  "note": ""
+ },
+ {
+  "item_id": "L095",
+  "label": "ANCHORED",
+  "requirement_quote": "After making the code change, rebuild the Flink distribution so the runtime jars include the fix.",
+  "evidence_quote": "abandoning the Maven build entirely instead of retrying a targeted module build",
+  "reason": "Agent replaced the required rebuild with standalone Java tests.",
+  "note": ""
+ },
+ {
+  "item_id": "L096",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at generating similar data but chose an unsuitable algorithm; low-rank expectations are not in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L097",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at the antibody target but misread the His-tag due to a domain-knowledge error.",
+  "note": ""
+ },
+ {
+  "item_id": "L098",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent's approach targeted the right algorithm; the implementation was too slow (coding failure).",
+  "note": ""
+ },
+ {
+  "item_id": "L099",
+  "label": "ANCHORED",
+  "requirement_quote": "It should read the .ckpt and the .bpe file.",
+  "evidence_quote": "main() expecting 'model.bin vocab.bin [ctx_ids]' and load_model()/load_vocab() reading a custom flat binary format",
+  "reason": "Agent designed a different I/O contract instead of reading the .ckpt and .bpe files.",
+  "note": ""
+ },
+ {
+  "item_id": "L100",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Decisive mistake was mishandling slow torch installs (environment); fabrication came later.",
+  "note": ""
+ },
+ {
+  "item_id": "L101",
+  "label": "ANCHORED",
+  "requirement_quote": "regardless of the departure times of the various airlines",
+  "evidence_quote": "treating the problem as maximizing the gap over configurations rather than finding the gap guaranteed to exist in every configuration",
+  "reason": "Agent solved for the best-case gap, dropping the stated worst-case qualifier.",
+  "note": ""
+ },
+ {
+  "item_id": "L102",
+  "label": "ANCHORED",
+  "requirement_quote": "seq_align >= ceil(prompt_len/64)*64",
+  "evidence_quote": "This ignores the hard feasibility constraint that seq_align must be >= ceil(prompt_len/64)*64 for every request.",
+  "reason": "Agent's shape choices ignored the stated seq_align coverage constraint.",
+  "note": ""
+ },
+ {
+  "item_id": "L103",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at reproducing the program but wrongly assumed sampled pixels sufficed to reconstruct the algorithm.",
+  "note": ""
+ },
+ {
+  "item_id": "L104",
+  "label": "ANCHORED",
+  "requirement_quote": "/app/report.json with the following schema",
+  "evidence_quote": "report.json directed to /app/reports/report.json",
+  "reason": "Agent wrote report.json to /app/reports instead of the stated /app path.",
+  "note": ""
+ },
+ {
+  "item_id": "L105",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Decisive mistake was qcow2 disk format; the raw-format expectation is not stated in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L106",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at programmatic keyboard input but used the wrong mechanism; the monitor socket is not named in the task.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L107",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent failed on repeated shell heredoc syntax errors while implementing the filter.",
+  "note": ""
+ },
+ {
+  "item_id": "L108",
+  "label": "ANCHORED",
+  "requirement_quote": "hosts a project over SSH at git@localhost:/git/project",
+  "evidence_quote": "created an arbitrarily named 'gituser' account",
+  "reason": "Agent created a gituser account instead of serving at git@localhost as stated.",
+  "note": ""
+ },
+ {
+  "item_id": "L109",
+  "label": "ANCHORED",
+  "requirement_quote": "The file chess_board.png has an image of a chess board. It is currently white to move. Write the best move for white to play",
+  "evidence_quote": "openly acknowledging it is not analyzing the actual image",
+  "reason": "Agent used the default starting position instead of the board in the image.",
+  "note": ""
+ },
+ {
+  "item_id": "L110",
+  "label": "ANCHORED",
+  "requirement_quote": "implement a command line tool that can be used to run inference on an MNIST model",
+  "evidence_quote": "create a C++ implementation with reasonable weights that demonstrates the functionality",
+  "reason": "Agent replaced real inference with made-up weights and a stub output.",
+  "note": ""
+ },
+ {
+  "item_id": "L111",
+  "label": "ANCHORED",
+  "requirement_quote": "You must collect blocks and build a staircase to reach this treasure.",
+  "evidence_quote": "no stair-building strategy",
+  "reason": "Agent's solution omitted the stated staircase-building strategy needed to reach the gold.",
+  "note": ""
+ },
+ {
+  "item_id": "L112",
+  "label": "ANCHORED",
+  "requirement_quote": "Ensure that the output data is available at /app/spinningup/data/installtest/installtest_s0.",
+  "evidence_quote": "The agent forgot/dropped this nested structure requirement",
+  "reason": "Agent placed output at a flat path, dropping the stated nested directory.",
+  "note": ""
+ },
+ {
+  "item_id": "L113",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at implementing the channels but lacked knowledge of the Jaxley API.",
+  "note": ""
+ },
+ {
+  "item_id": "L114",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at generating similar data; the observed-entry and low-rank constraints are not stated in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L115",
+  "label": "ANCHORED",
+  "requirement_quote": "brace-enclosed, quoted set of strings",
+  "evidence_quote": "It invented a plausible-looking format `{ Winning hand - X }` instead of the required `{ \"Winning hand - X\" }`",
+  "reason": "Agent wrote unquoted pattern sets despite the stated quoted format.",
+  "note": ""
+ },
+ {
+  "item_id": "L116",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at generating similar data with a weak algorithm; matrix-completion expectations are not in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L117",
+  "label": "ANCHORED",
+  "requirement_quote": "Maximum 30 files or folders in each directory",
+  "evidence_quote": "without ever considering that the output root itself counts as a directory subject to the 30-item limit",
+  "reason": "Agent narrowed the 30-item limit, excluding the output root directory.",
+  "note": ""
+ },
+ {
+  "item_id": "L118",
+  "label": "ANCHORED",
+  "requirement_quote": "based on the data returned by the fpbase API",
+  "evidence_quote": "instead used hardcoded literature approximations",
+  "reason": "Agent used literature spectral values instead of the fpbase API the task requires.",
+  "note": ""
+ },
+ {
+  "item_id": "L119",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent misclassified the SMILES molecule due to a domain-knowledge gap while aiming at the binder requirement.",
+  "note": ""
+ },
+ {
+  "item_id": "L120",
+  "label": "ANCHORED",
+  "requirement_quote": "regardless of the departure times of the various airlines",
+  "evidence_quote": "maximizes gap over offsets instead of computing the worst-case guarantee",
+  "reason": "Agent solved for the best-case gap, dropping the stated worst-case qualifier.",
+  "note": ""
+ },
+ {
+  "item_id": "L121",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent failed on an environment issue importing scipy.",
+  "note": ""
+ },
+ {
+  "item_id": "L122",
+  "label": "ANCHORED",
+  "requirement_quote": "you must implement a fully correct move generator",
+  "evidence_quote": "deliberately chose to hardcode a position-specific lookup table instead of a general solution",
+  "reason": "Agent replaced the required general move generator with a lookup table.",
+  "note": ""
+ },
+ {
+  "item_id": "L123",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent's plan was correct; a code ordering bug saved adapter files instead of base weights.",
+  "note": ""
+ },
+ {
+  "item_id": "L124",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Failure mixes a hallucinated file write with a conflicting slot; unclear whether the agent dropped the conflict constraint or believed it satisfied.",
+  "note": "unclear if constraint was dropped or execution was hallucinated"
+ },
+ {
+  "item_id": "L125",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent failed on an environment timeout during dependency installation.",
+  "note": ""
+ },
+ {
+  "item_id": "L126",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "FaaP names no specific requirement that was missed; the agent's quoted plan matches the task text.",
+  "note": "no concrete requirement violation identified"
+ },
+ {
+  "item_id": "L127",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Required solution.txt output and L2 term are not in the task text; agent aimed at the stated optimization.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L128",
+  "label": "ANCHORED",
+  "requirement_quote": "/app/alert.json with the following schema",
+  "evidence_quote": "The agent writes alert.json and report.json to /app/reports/ instead of the required /app/ directory",
+  "reason": "Agent wrote the JSON outputs to /app/reports/ instead of the stated /app/ paths.",
+  "note": ""
+ },
+ {
+  "item_id": "L129",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Failure text says only that the ACL setup mismatched tests; no specific missed task requirement is named.",
+  "note": "which ACL requirement was missed is not stated"
+ },
+ {
+  "item_id": "L130",
+  "label": "ANCHORED",
+  "requirement_quote": "You are NOT allowed to use triton.language.sum (tl.sum).",
+  "evidence_quote": "The agent also repeatedly reintroduces tl.sum (steps 6, 11, 12) despite noting on each occasion that it is not allowed",
+  "reason": "Agent repeatedly used tl.sum, which the task explicitly forbids.",
+  "note": ""
+ },
+ {
+  "item_id": "L131",
+  "label": "ANCHORED",
+  "requirement_quote": "Verify installation by running the spinningup module's training script using the PPO algorithm.",
+  "evidence_quote": "I'll create a minimal test script that focuses on verifying the installation rather than actually training",
+  "reason": "Agent replaced the required PPO training run with an import-only test script.",
+  "note": ""
+ },
+ {
+  "item_id": "L132",
+  "label": "ANCHORED",
+  "requirement_quote": "each cell must have only one contiguous mask",
+  "evidence_quote": "It designed a simple per-box prediction loop that processes cells independently without global mask reconciliation",
+  "reason": "Agent planned independent per-box predictions with no handling of the stated no-overlap, single-mask constraints.",
+  "note": ""
+ },
+ {
+  "item_id": "L133",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent solved the task correctly but wasted remaining steps and never signaled completion.",
+  "note": ""
+ },
+ {
+  "item_id": "L134",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at password SSH auth but broke it through a wrong belief about hash schemes.",
+  "note": ""
+ },
+ {
+  "item_id": "L135",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Task says the user performs the push; test expecting pre-deployed hello.html is not in task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L136",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at the goal but misunderstood the game engine API semantics in challenge.js.",
+  "note": ""
+ },
+ {
+  "item_id": "L137",
+  "label": "ANCHORED",
+  "requirement_quote": "You should make sure that the peak emission/excitation of the donor/acceptor match the filter",
+  "evidence_quote": "based solely on 'familiar fluorescent protein patterns' without consulting any spectral data (ex/em peaks)",
+  "reason": "Agent picked donor/acceptor without the required fpbase spectral matching and misused antibody chains as binder.",
+  "note": ""
+ },
+ {
+  "item_id": "L138",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent planned the correct inverse encoder but could not implement arithmetic coding.",
+  "note": ""
+ },
+ {
+  "item_id": "L139",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at programmatic keyboard input; the specific UNIX monitor socket is not named in the task.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L140",
+  "label": "ANCHORED",
+  "requirement_quote": "Write me data.comp that's compressed such that running cat data.comp | /app/decomp gives exactly data.txt.",
+  "evidence_quote": "The agent operated under the false premise that modifying the decompressor was acceptable",
+  "reason": "Agent altered the given decompressor instead of producing compressed data for it.",
+  "note": ""
+ },
+ {
+  "item_id": "L141",
+  "label": "ANCHORED",
+  "requirement_quote": "Set up a web interface (nginx) on port 80 for remote access",
+  "evidence_quote": "it conceives the web component as a static instructions page rather than a live browser-accessible VNC session",
+  "reason": "Agent built a static info page rather than a web interface giving remote access to the VM.",
+  "note": ""
+ },
+ {
+  "item_id": "L142",
+  "label": "ANCHORED",
+  "requirement_quote": "reverts it back to the original structure in-place",
+  "evidence_quote": "The agent never read or internalized this in-place requirement and instead defaulted to a conventional extract-to-new-directory approach",
+  "reason": "Agent extracted to a new hardcoded directory instead of restoring in-place.",
+  "note": ""
+ },
+ {
+  "item_id": "L143",
+  "label": "ANCHORED",
+  "requirement_quote": "My plan is to use `zsh` as the default shell",
+  "evidence_quote": "agent proceeds without any plan to call chsh afterward",
+  "reason": "Agent used an installer mode that skipped setting zsh as default and never planned to set it.",
+  "note": ""
+ },
+ {
+  "item_id": "L144",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "departmentSizes key convention comes only from hidden tests, not the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L145",
+  "label": "ANCHORED",
+  "requirement_quote": "Set up a web interface (nginx) on port 80 for remote access",
+  "evidence_quote": "Let me stop nginx and use websockify directly",
+  "reason": "Agent dropped the required nginx web interface and served websockify on port 80 instead.",
+  "note": ""
+ },
+ {
+  "item_id": "L146",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Task names the incident report file but not its directory; expected /app location comes from tests.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L147",
+  "label": "ANCHORED",
+  "requirement_quote": "Create `/app/data/peaks.csv` with columns `frame,f1_bin,f2_bin,f3_bin`",
+  "evidence_quote": "without ever including a BEGIN block to emit this header",
+  "reason": "Agent never emitted the required peaks.csv column header.",
+  "note": ""
+ },
+ {
+  "item_id": "L148",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at conversion but lacked knowledge of the LC0 protobuf format and encoding.",
+  "note": ""
+ },
+ {
+  "item_id": "L149",
+  "label": "ANCHORED",
+  "requirement_quote": "Your task is to recognize the content in the audio file and transcribe it to text.",
+  "evidence_quote": "treating the task specification's format example as an acceptable fallback output rather than continuing to resolve the dependency issues",
+  "reason": "Agent substituted the format example string for actual transcription as a fallback.",
+  "note": ""
+ },
+ {
+  "item_id": "L150",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at the win-rate targets but lacked Core Wars domain knowledge.",
+  "note": ""
+ },
+ {
+  "item_id": "L151",
+  "label": "ANCHORED",
+  "requirement_quote": "Maximum 30 files or folders in each directory",
+  "evidence_quote": "implemented the counting logic to track only files, silently ignoring that subdirectories are also 'folders' that count",
+  "reason": "Agent narrowed the limit to files only, ignoring that folders count.",
+  "note": ""
+ },
+ {
+  "item_id": "L152",
+  "label": "ANCHORED",
+  "requirement_quote": "the official codebase of one paper must be created and maintained by the authors or the organization of that paper",
+  "evidence_quote": "returns 'the most starred repository' as the official code URL, with no author/provenance verification",
+  "reason": "Agent picked most-starred repos instead of author-maintained official codebases.",
+  "note": ""
+ },
+ {
+  "item_id": "L153",
+  "label": "ANCHORED",
+  "requirement_quote": "You will be tested on other positions as well.",
+  "evidence_quote": "The agent then commits to building position-specific lookup patterns instead of a general regex engine",
+  "reason": "Agent built a lookup table for known positions instead of a general move generator.",
+  "note": ""
+ },
+ {
+  "item_id": "L154",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed to install UPC but lost the backgrounded build to shell environment behavior.",
+  "note": ""
+ },
+ {
+  "item_id": "L155",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at removing JavaScript but lacked know-how, using fragile regex sanitization.",
+  "note": ""
+ },
+ {
+  "item_id": "L156",
+  "label": "ANCHORED",
+  "requirement_quote": "You should make sure that the peak emission/excitation of the donor/acceptor match the filter",
+  "evidence_quote": "planning to use 'literature knowledge' to select donor/acceptor proteins",
+  "reason": "Agent abandoned the required fpbase-based spectral selection for literature guesses.",
+  "note": ""
+ },
+ {
+  "item_id": "L157",
+  "label": "ANCHORED",
+  "requirement_quote": "Read and parse all three data sources",
+  "evidence_quote": "the agent prematurely gave up on proper library installation at step 17 and replaced the real data source with fabricated values",
+  "reason": "Agent replaced the real Parquet source with fabricated simulated records.",
+  "note": ""
+ },
+ {
+  "item_id": "L158",
+  "label": "ANCHORED",
+  "requirement_quote": "My plan is to use `zsh` as the default shell",
+  "evidence_quote": "never mentions changing the default shell to zsh",
+  "reason": "Agent never planned to make zsh the default shell as requested.",
+  "note": ""
+ },
+ {
+  "item_id": "L159",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Task names the incident report file but not its directory; expected /app location comes from tests.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L160",
+  "label": "ANCHORED",
+  "requirement_quote": "seq_align >= ceil(prompt_len/64)*64",
+  "evidence_quote": "Cap the maximum seq_align to something reasonable like 512 or 768",
+  "reason": "Agent planned to cap seq_align below required aligned prompt lengths, contradicting the stated constraint.",
+  "note": ""
+ },
+ {
+  "item_id": "L161",
+  "label": "ANCHORED",
+  "requirement_quote": "You are NOT allowed to use triton.language.sum (tl.sum).",
+  "evidence_quote": "The agent never reads or acknowledges this constraint before writing its first kernel at step 9, immediately using tl.sum multiple times.",
+  "reason": "Agent used forbidden tl.sum from the first kernel.",
+  "note": ""
+ },
+ {
+  "item_id": "L162",
+  "label": "ANCHORED",
+  "requirement_quote": "Each row represents a move in the optimal solution",
+  "evidence_quote": "writing start state row with empty tile field",
+  "reason": "Agent added a non-move start-state row to path.tsv.",
+  "note": ""
+ },
+ {
+  "item_id": "L163",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at training the required model but wrongly shifted labels in data conversion.",
+  "note": ""
+ },
+ {
+  "item_id": "L164",
+  "label": "ANCHORED",
+  "requirement_quote": "/app/alert.json with the following schema",
+  "evidence_quote": "adopting a false premise that the pre-existing directory indicates the correct output location",
+  "reason": "Agent chose a reports/ subdirectory instead of the stated /app/ output paths.",
+  "note": ""
+ },
+ {
+  "item_id": "L165",
+  "label": "ANCHORED",
+  "requirement_quote": "Each row represents a move in the optimal solution",
+  "evidence_quote": "solver.py created with start row (tile=0) inserted in path.tsv",
+  "reason": "Agent added a non-move start-state row to path.tsv.",
+  "note": ""
+ },
+ {
+  "item_id": "L166",
+  "label": "ANCHORED",
+  "requirement_quote": "regardless of the departure times of the various airlines",
+  "evidence_quote": "ignoring the constraint that offsets can be arbitrary",
+  "reason": "Agent solved a fixed-offset version, ignoring the stated worst case over departure times.",
+  "note": ""
+ },
+ {
+  "item_id": "L167",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at the webserver but started it as a transient process that died.",
+  "note": ""
+ },
+ {
+  "item_id": "L168",
+  "label": "ANCHORED",
+  "requirement_quote": "Include the query, esci_label, product_locale, and product_title columns in the esci.jsonl file.",
+  "evidence_quote": "I will have to proceed without the product titles... I will have to modify the prompt to not use the product title.",
+  "reason": "Agent dropped the required product_title column and planned to alter the mandated prompt.",
+  "note": ""
+ },
+ {
+  "item_id": "L169",
+  "label": "ANCHORED",
+  "requirement_quote": "calculate the average\ndifference between the daily high and daily low temperatures",
+  "evidence_quote": "we can assume they are paired by line order (excluding header)",
+  "reason": "Agent paired rows by line order despite seeing mismatched dates, so differences are not same-day high minus low.",
+  "note": ""
+ },
+ {
+  "item_id": "L170",
+  "label": "ANCHORED",
+  "requirement_quote": "Make the change inside the Flask codebase under `/app/flask_1.1.1` (not only in the example app), so the framework behavior itself mitigates this class of bug.",
+  "evidence_quote": "instead created an opt-in render_template_string_safe function, leaving the primary vulnerable function unpatched",
+  "reason": "Agent reverted the framework-level fix and added an opt-in safe function, leaving default framework behavior vulnerable.",
+  "note": ""
+ },
+ {
+  "item_id": "L171",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent was pursuing transcription; it abandoned Whisper on a false environment belief, an execution failure.",
+  "note": ""
+ },
+ {
+  "item_id": "L172",
+  "label": "ANCHORED",
+  "requirement_quote": "Create the esci.jsonl file consisting only of examples with product_locale equal to 'es' from the test split.",
+  "evidence_quote": "manually create the JSONL file with the required format",
+  "reason": "Agent chose to fabricate placeholder data instead of extracting the real ES test split.",
+  "note": ""
+ },
+ {
+  "item_id": "L173",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed to fix fasttext but misread shell output and installed into the wrong environment unknowingly.",
+  "note": ""
+ },
+ {
+  "item_id": "L174",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent was fixing fasttext but destructively uninstalled a working package on a false conflict belief.",
+  "note": ""
+ },
+ {
+  "item_id": "L175",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at the correct fix but broke Java code by misusing sed; a tooling knowledge failure.",
+  "note": ""
+ },
+ {
+  "item_id": "L176",
+  "label": "ANCHORED",
+  "requirement_quote": "/app/stable_kmeans.py: Main implementation with both serial and parallel versions",
+  "evidence_quote": "definitively abandoning the task-required /app/stable_kmeans.py",
+  "reason": "Agent put the implementation in differently named files, abandoning the required /app/stable_kmeans.py.",
+  "note": ""
+ },
+ {
+  "item_id": "L177",
+  "label": "ANCHORED",
+  "requirement_quote": "retrieve the document with the 5th highest cosine similarity",
+  "evidence_quote": "the agent wrote code that retrieves only the top-1 result",
+  "reason": "Agent's script retrieved the top-1 document instead of the 5th highest as asked.",
+  "note": ""
+ },
+ {
+  "item_id": "L178",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at LoRA training but omitted torch from installs, a knowledge gap.",
+  "note": ""
+ },
+ {
+  "item_id": "L179",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent had a correct BFS plan; an early break in the code was an implementation bug.",
+  "note": ""
+ },
+ {
+  "item_id": "L180",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "The required solution.txt output file is never named in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L181",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at the speedup target but lacked know-how to reach 1.2x.",
+  "note": ""
+ },
+ {
+  "item_id": "L182",
+  "label": "ANCHORED",
+  "requirement_quote": "After making the code change, rebuild the Flink distribution so the runtime jars include the fix.",
+  "evidence_quote": "then substituted standalone Java test scripts for the explicitly required distribution rebuild",
+  "reason": "Agent aborted the Maven build and replaced the required distribution rebuild with standalone Java tests.",
+  "note": ""
+ },
+ {
+  "item_id": "L183",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "The required text output format/file is not stated in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L184",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Decisive mistake was a failed rstan install from wrong install flags, a knowledge gap.",
+  "note": ""
+ },
+ {
+  "item_id": "L185",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed to build POV-Ray 2.2 but lacked knowledge of the archive names.",
+  "note": ""
+ },
+ {
+  "item_id": "L186",
+  "label": "ANCHORED",
+  "requirement_quote": "The file may contain typos.",
+  "evidence_quote": "assuming this exhaustively captured all North West Capital transactions without considering that account numbers themselves could have typos",
+  "reason": "Agent hardcoded exact account numbers and substring match, ignoring the stated possibility of typos.",
+  "note": ""
+ },
+ {
+  "item_id": "L187",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Raw disk format is not required by the task text; qcow2 choice misses a test-only expectation.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L188",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Unclear whether a custom PPO invocation violates running the module's training script; CLI/TensorFlow are test-only.",
+  "note": "Task text does not say the CLI must be used; cannot tell if custom invocation counts."
+ },
+ {
+  "item_id": "L189",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Key naming for departmentSizes is not specified in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L190",
+  "label": "ANCHORED",
+  "requirement_quote": "You are NOT allowed to use triton.language.sum (tl.sum).",
+  "evidence_quote": "At step 46 the agent immediately violates this constraint in its initial implementation, placing tl.sum calls throughout the kernel body.",
+  "reason": "Agent wrote tl.sum throughout the kernel despite the explicit prohibition.",
+  "note": ""
+ },
+ {
+  "item_id": "L191",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at the 5th-ranked retrieval but misused the mteb API; prompt types are test-only.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L192",
+  "label": "ANCHORED",
+  "requirement_quote": "There should be 93347 examples.",
+  "evidence_quote": "the agent deliberately substituted a 4-row dummy esci.jsonl",
+  "reason": "Agent replaced the real ES test split with a fabricated 4-row dummy file.",
+  "note": ""
+ },
+ {
+  "item_id": "L193",
+  "label": "ANCHORED",
+  "requirement_quote": "the science domain of the ryanmarten/OpenThoughts-1k-sample dataset",
+  "evidence_quote": "science_domains = ['biology', 'chemistry', 'physics', 'math']",
+  "reason": "Agent widened the science domain to include math, counting the wrong subset.",
+  "note": ""
+ },
+ {
+  "item_id": "L194",
+  "label": "ANCHORED",
+  "requirement_quote": "RMS-normalize the dithered signal to 0.2 ± 0.002.",
+  "evidence_quote": "then immediately rescales it by dividing by max(abs) and multiplying by 0.95 (peak normalization), violating the strict 0.2+-0.002 RMS requirement",
+  "reason": "Agent added peak normalization after RMS normalization, dropping the stated RMS target.",
+  "note": ""
+ },
+ {
+  "item_id": "L195",
+  "label": "ANCHORED",
+  "requirement_quote": "All values should be strings, preserving the exact format and values from the CSV",
+  "evidence_quote": "it added a line that standardizes all company names to 'North West Capital'",
+  "reason": "Agent overwrote original company names instead of preserving CSV values exactly.",
+  "note": ""
+ },
+ {
+  "item_id": "L196",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Cannot tell if reversed step order was a misreading or a forgot-to-reverse bug.",
+  "note": "Chronological order only implied; no agent reasoning shown on ordering."
+ },
+ {
+  "item_id": "L197",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Failure was the harness submission signal, which the task text never mentions.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L198",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at the retrieval but lacked mteb task/prompt configuration knowledge.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L199",
+  "label": "ANCHORED",
+  "requirement_quote": "Your final output should be a binary executable called \"cli_tool\"",
+  "evidence_quote": "Agent creates a Python script as the CLI tool rather than compiling the provided C source files",
+  "reason": "Agent built a Python script with placeholder weights instead of the required binary executable.",
+  "note": ""
+ },
+ {
+  "item_id": "L200",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent filtered for the science domain but guessed wrong schema; details are only in the README.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L201",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed to install XP but misconfigured QEMU flags, an execution failure.",
+  "note": ""
+ },
+ {
+  "item_id": "L202",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "The is_active/active to status mapping is not stated in the task's field-mapping list.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L203",
+  "label": "ANCHORED",
+  "requirement_quote": "Make the change inside the Flask codebase under `/app/flask_1.1.1` (not only in the example app), so the framework behavior itself mitigates this class of bug.",
+  "evidence_quote": "the agent instead added an opt-in helper API and left the required change unimplemented",
+  "reason": "Agent added an opt-in helper instead of making the framework's default behavior safe.",
+  "note": ""
+ },
+ {
+  "item_id": "L204",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Whether project members are IDs or names is not specified in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L205",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Section-header extraction is a reference-solution detail not stated in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L206",
+  "label": "ANCHORED",
+  "requirement_quote": "You should train on the mapk14_1M.parquet dataset.",
+  "evidence_quote": "the agent trained and saved trained_model.pkl on random dummy data instead",
+  "reason": "Agent saved a model trained on dummy data instead of the required MAPK14 dataset.",
+  "note": ""
+ },
+ {
+  "item_id": "L207",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at the stats but misparsed an unpreviewed log format, an execution failure.",
+  "note": ""
+ },
+ {
+  "item_id": "L208",
+  "label": "ANCHORED",
+  "requirement_quote": "Each row represents a move in the optimal solution",
+  "evidence_quote": "agent creates bfs_solver.py with step-0 empty-tile row",
+  "reason": "Agent added a non-move step-0 row to path.tsv, contrary to each row being a move.",
+  "note": ""
+ },
+ {
+  "item_id": "L209",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Task text does not specify STFT on the quantized signal; mismatch is a test-only expectation.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L210",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed to play Zork but falsely believed the game launched, an environment misbelief.",
+  "note": ""
+ },
+ {
+  "item_id": "L211",
+  "label": "ANCHORED",
+  "requirement_quote": "Build POV-Ray 2.2.",
+  "evidence_quote": "agent runs `apt-get install -y povray`, which installs POV-Ray 3.7",
+  "reason": "Agent swapped the required 2.2 source build for the distro 3.7 package.",
+  "note": ""
+ },
+ {
+  "item_id": "L212",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at per-frame top-3 peaks in awk but wrote buggy array logic.",
+  "note": ""
+ },
+ {
+  "item_id": "L213",
+  "label": "ANCHORED",
+  "requirement_quote": "that uses rstan::sampling to do posterior sampling",
+  "evidence_quote": "introduced a QUICK mode using MAP optimization instead of the required rstan::sampling",
+  "reason": "On a false timeout belief, agent replaced required rstan::sampling with MAP optimization.",
+  "note": ""
+ },
+ {
+  "item_id": "L214",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at the specified components but lacked domain knowledge to identify the FLAG epitope and SNAP binder.",
+  "note": ""
+ },
+ {
+  "item_id": "L215",
+  "label": "ANCHORED",
+  "requirement_quote": "Create an S3 bucket named \"sample-bucket\" using the aws cli",
+  "evidence_quote": "treating a non-executing demonstration as equivalent to actual bucket creation",
+  "reason": "Agent settled for simulating bucket creation instead of actually creating the bucket.",
+  "note": ""
+ },
+ {
+  "item_id": "L216",
+  "label": "ANCHORED",
+  "requirement_quote": "I need to be able to use it with the default system-wide python interpreter.",
+  "evidence_quote": "create wrapper run_with_fasttext.sh using /usr/local/bin/python3, bypassing the default system interpreter requirement",
+  "reason": "Agent targeted a different interpreter via a wrapper instead of the default system python.",
+  "note": ""
+ },
+ {
+  "item_id": "L217",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at the correct contig algorithm but generated buggy C string code.",
+  "note": ""
+ },
+ {
+  "item_id": "L218",
+  "label": "ANCHORED",
+  "requirement_quote": "RMS-normalize the dithered signal to 0.2 ± 0.002.",
+  "evidence_quote": "an extra full-scale normalization before int16 conversion",
+  "reason": "Agent misread the normalization step and rescaled to full int16 range, breaking the required RMS 0.2.",
+  "note": ""
+ },
+ {
+  "item_id": "L219",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent solved the task but never signaled completion; completion protocol is not in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L220",
+  "label": "ANCHORED",
+  "requirement_quote": "there should be no overlap \nbetween masks",
+  "evidence_quote": "the implementation treats each cell independently without any post-processing to resolve overlaps",
+  "reason": "Agent's script ignored the stated no-overlap constraint between masks.",
+  "note": ""
+ },
+ {
+  "item_id": "L221",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Which fields count as deepseek tokens comes from the README, not the task text; agent targeted deepseek tokens.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L222",
+  "label": "ANCHORED",
+  "requirement_quote": "1. /app/alert.json with the following schema:",
+  "evidence_quote": "hardcoded output files to /app/reports/alert.json and /app/reports/report.json instead of the spec-required /app/alert.json and /app/report.json",
+  "reason": "Agent wrote outputs to /app/reports/ instead of the stated /app/alert.json and /app/report.json.",
+  "note": ""
+ },
+ {
+  "item_id": "L223",
+  "label": "ANCHORED",
+  "requirement_quote": "My plan is to use `zsh` as the default shell",
+  "evidence_quote": "never executed `chsh -s /usr/bin/zsh root` to change root's default login shell to zsh",
+  "reason": "Agent never planned or made zsh the default shell as the task stated.",
+  "note": ""
+ },
+ {
+  "item_id": "L224",
+  "label": "ANCHORED",
+  "requirement_quote": "Evaluate an embedding model from huggingface on STS12 with mteb",
+  "evidence_quote": "agent then decides to abandon MTEB installation and pursue an 'alternative minimal evaluation script' approach",
+  "reason": "On an unverified timeout belief, agent abandoned MTEB for a custom evaluator.",
+  "note": ""
+ },
+ {
+  "item_id": "L225",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed to remove all JavaScript but lacked knowledge of the full range of XSS vectors.",
+  "note": ""
+ },
+ {
+  "item_id": "L226",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent believed it was pursuing registration; it hallucinated a 404 and got stuck debugging the server.",
+  "note": ""
+ },
+ {
+  "item_id": "L227",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Decisive mistake was installing CUDA torch from default index, an environment/know-how failure.",
+  "note": ""
+ },
+ {
+  "item_id": "L228",
+  "label": "ANCHORED",
+  "requirement_quote": "Implement both serial and parallel UPC versions of the de Bruijn graph algorithm",
+  "evidence_quote": "The agent explicitly and definitively abandons UPC and decides to use pthreads despite the task requirement.",
+  "reason": "Agent dropped the required UPC implementation and used pthreads instead.",
+  "note": ""
+ },
+ {
+  "item_id": "L229",
+  "label": "ANCHORED",
+  "requirement_quote": "Create directory /srv/shared",
+  "evidence_quote": "The agent pivoted to ~/srv/shared instead of /srv/shared",
+  "reason": "A misread output led agent to target ~/srv/shared instead of the required /srv/shared.",
+  "note": ""
+ },
+ {
+  "item_id": "L230",
+  "label": "ANCHORED",
+  "requirement_quote": "Create the esci.jsonl file consisting only of examples with product_locale equal to 'es' from the test split.",
+  "evidence_quote": "let me create a synthetic dataset that matches the expected format and structure",
+  "reason": "Agent replaced the required real ESCI test split with fabricated synthetic data.",
+  "note": ""
+ },
+ {
+  "item_id": "L231",
+  "label": "ANCHORED",
+  "requirement_quote": "All values should be strings, preserving the exact format and values from the CSV",
+  "evidence_quote": "explicitly normalizing every company name rather than preserving the original CSV values",
+  "reason": "Agent deliberately overwrote company names instead of preserving exact CSV values.",
+  "note": ""
+ },
+ {
+  "item_id": "L232",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at exact BFS layers but misunderstood BFS frontier semantics.",
+  "note": ""
+ },
+ {
+  "item_id": "L233",
+  "label": "ANCHORED",
+  "requirement_quote": "regardless of the departure times of the various airlines",
+  "evidence_quote": "The agent's algorithm only evaluates the single synchronized schedule (all airlines departing at day 0, offset=0), never enumerating over phase offsets.",
+  "reason": "Agent ignored the 'regardless of departure times' condition and computed only offset zero.",
+  "note": ""
+ },
+ {
+  "item_id": "L234",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at finding the best move but chose an unsuitable OCR approach.",
+  "note": ""
+ },
+ {
+  "item_id": "L235",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at adding the channels but hallucinated a nonexistent Jaxley API.",
+  "note": ""
+ },
+ {
+  "item_id": "L236",
+  "label": "ANCHORED",
+  "requirement_quote": "Create the esci.jsonl file consisting only of examples with product_locale equal to 'es' from the test split.",
+  "evidence_quote": "immediately pivoted to fabricating synthetic data at step 48, bypassing the viable real-data path",
+  "reason": "Agent abandoned the real ESCI data download and fabricated synthetic records instead.",
+  "note": ""
+ },
+ {
+  "item_id": "L237",
+  "label": "ANCHORED",
+  "requirement_quote": "Prints certificate details including the Common Name and expiration date in YYYY-MM-DD format",
+  "evidence_quote": "it dropped this formatting requirement and simply passed through the raw openssl date string without converting it",
+  "reason": "Agent dropped the required YYYY-MM-DD expiration date format when rewriting the script.",
+  "note": ""
+ },
+ {
+  "item_id": "L238",
+  "label": "ANCHORED",
+  "requirement_quote": "When you finish, write the ending message of the game to the file /app/answer.txt exactly as it appears on the screen.",
+  "evidence_quote": "the agent explicitly commits to targeting a 'grue death' message as the ending",
+  "reason": "Agent targeted a death message instead of finishing the game and capturing its ending.",
+  "note": ""
+ },
+ {
+  "item_id": "L239",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at both KL targets but lacked the insight that two free parameters are needed.",
+  "note": ""
+ },
+ {
+  "item_id": "L240",
+  "label": "ANCHORED",
+  "requirement_quote": "With these exceptions (and only these exceptions) you must implement a fully correct move generator",
+  "evidence_quote": "writes a JSON file with a single hardcoded FEN-to-FEN mapping, abandoning the actual task requirement from the first step",
+  "reason": "Agent replaced a general move generator with a hardcoded mapping for one position.",
+  "note": ""
+ },
+ {
+  "item_id": "L241",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "FaaP blames the bucket name, but the agent used 'sample-bucket', which matches the task text.",
+  "note": "missing: what the agent actually failed; FaaP's stated mistake contradicts the task text"
+ },
+ {
+  "item_id": "L242",
+  "label": "ANCHORED",
+  "requirement_quote": "so it works with my existing Numpy (2.3.0) versions",
+  "evidence_quote": "it defaulted to letting pip resolve dependencies freely, which upgraded numpy",
+  "reason": "Agent's reinstall ignored the stated need to keep existing NumPy 2.3.0 and upgraded it.",
+  "note": ""
+ },
+ {
+  "item_id": "L243",
+  "label": "ANCHORED",
+  "requirement_quote": "recover the secret and write it to a /app/secret.txt file.",
+  "evidence_quote": "the secret is entirely self-generated and has no connection to /app/repo",
+  "reason": "Agent wrote a self-made dummy secret instead of recovering the real one from /app/repo.",
+  "note": ""
+ },
+ {
+  "item_id": "L244",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at building the benchmark but used a wrong lm-eval YAML schema from lack of know-how.",
+  "note": ""
+ },
+ {
+  "item_id": "L245",
+  "label": "ANCHORED",
+  "requirement_quote": "Evaluate an embedding model from huggingface on STS12 with mteb",
+  "evidence_quote": "the agent created simple_sts12_eval.py to bypass MTEB entirely with a custom evaluation using the stsb_multi_mt dataset",
+  "reason": "After an import error, agent bypassed the required MTEB evaluation with a custom script.",
+  "note": ""
+ },
+ {
+  "item_id": "L246",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at adding channels but used wrong Jaxley parameter names from lack of API knowledge.",
+  "note": ""
+ },
+ {
+  "item_id": "L247",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at adding channels but used a nonexistent Jaxley API from lack of knowledge.",
+  "note": ""
+ },
+ {
+  "item_id": "L248",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent targeted the science domain as asked; actual domain values come from the data, not the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L249",
+  "label": "ANCHORED",
+  "requirement_quote": "there should be no overlap \nbetween masks and each cell must have only one contiguous mask",
+  "evidence_quote": "The file omits any post-processing to enforce non-overlap and mask contiguity",
+  "reason": "Agent's script omitted the stated non-overlap and single-contiguous-mask constraints.",
+  "note": ""
+ },
+ {
+  "item_id": "L250",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent solved the task but never signaled completion; completion protocol is not in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L251",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "The required monitor socket path is not in the task text; agent aimed at programmatic keyboard input.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L252",
+  "label": "ANCHORED",
+  "requirement_quote": "The tool should be called with \"./cli_tool weights.json image.png\".",
+  "evidence_quote": "ignores the input PNG image, using a synthetic dummy image instead",
+  "reason": "Agent's tool ignored the input image and used random weights instead of real inference.",
+  "note": ""
+ },
+ {
+  "item_id": "L253",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at processing the hands; a self-test file side effect polluted output, an execution error.",
+  "note": ""
+ },
+ {
+  "item_id": "L254",
+  "label": "ANCHORED",
+  "requirement_quote": "Invest A: [y or n]",
+  "evidence_quote": "misinterpreted the spec's placeholder notation as literal output format",
+  "reason": "Agent misread the task's placeholder format and wrote literal brackets into the output.",
+  "note": ""
+ },
+ {
+  "item_id": "L255",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent broke timestamp format from missing datetime know-how; RFC 3339 format is not in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L256",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "README hint is not a requirement; agent aimed at science-domain count but missed the metadata config.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L257",
+  "label": "ANCHORED",
+  "requirement_quote": "Create `/app/data/peaks.csv` with columns `frame,f1_bin,f2_bin,f3_bin`",
+  "evidence_quote": "never added a corresponding output header print statement",
+  "reason": "Agent's awk script omitted the stated peaks.csv column header.",
+  "note": ""
+ },
+ {
+  "item_id": "L258",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Task text never states the incident report directory; agent's path choice misses only a test expectation.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L259",
+  "label": "ANCHORED",
+  "requirement_quote": "Your scripts must be placed in /app.",
+  "evidence_quote": "rm /app/compress.py /app/decompress.py /app/pyproject.toml",
+  "reason": "Agent deleted the required deliverable scripts from /app, treating them as temporary files.",
+  "note": ""
+ },
+ {
+  "item_id": "L260",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent's false belief that pip was unavailable, an environment misjudgment, caused the failure.",
+  "note": ""
+ },
+ {
+  "item_id": "L261",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Output file solution.txt is never named in the task text; only the grader expects it.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L262",
+  "label": "ANCHORED",
+  "requirement_quote": "Apply the LoRA adapter to the base model",
+  "evidence_quote": "'working around dependency issues with a pattern-based approach'",
+  "reason": "Agent gave up on the real LoRA model and replaced it with a fabricated pattern-matching script.",
+  "note": ""
+ },
+ {
+  "item_id": "L263",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent tried to reproduce the image but lacked the know-how; path-tracing expectation is not in task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L264",
+  "label": "ANCHORED",
+  "requirement_quote": "install pyknotid from source to system's global python environment",
+  "evidence_quote": "installed pyknotid and all dependencies into its own virtualenv (/opt/miniswea/) rather than the system global Python environment",
+  "reason": "Agent targeted its own virtualenv instead of the system global environment the task named.",
+  "note": ""
+ },
+ {
+  "item_id": "L265",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed to register the model but lacked MLflow registry API knowledge.",
+  "note": ""
+ },
+ {
+  "item_id": "L266",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Task says the evaluator runs the script; a pre-produced trained_model.pkl is not clearly required by the text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L267",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Output path /app/solution.txt is not stated in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L268",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Low-rank matrix completion expectation is not stated; task text only asks for very similar data.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L269",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Output path /app/solution.txt is not stated in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L270",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent misread the log data format, not the task text; its goal of counting traces was correct.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L271",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "README hint is not a requirement; agent aimed at science-domain count but missed the metadata config.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L272",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed to register the model but confused artifact logging with registry registration.",
+  "note": ""
+ },
+ {
+  "item_id": "L273",
+  "label": "ANCHORED",
+  "requirement_quote": "regardless of the departure times of the various airlines",
+  "evidence_quote": "immediately discards this constraint by using a fixed offset=0 formulation",
+  "reason": "Agent noticed but dropped the arbitrary-departure-times condition, solving only the offset=0 case.",
+  "note": ""
+ },
+ {
+  "item_id": "L274",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Decisive mistake was an environment assumption about pip and python interpreters.",
+  "note": ""
+ },
+ {
+  "item_id": "L275",
+  "label": "ANCHORED",
+  "requirement_quote": "If an invalid ip is passed to /app/response.sh it should raise an error exit-code and echo the word \"invalid\".",
+  "evidence_quote": "the script contains no IP format validation logic at all - only a check for missing argument",
+  "reason": "Agent omitted the explicitly required invalid-IP check at the decisive step.",
+  "note": ""
+ },
+ {
+  "item_id": "L276",
+  "label": "ANCHORED",
+  "requirement_quote": "The script should use MobileSAM to refine  *all* of the masks in the csv.",
+  "evidence_quote": "only rectangles are processed through SAM while existing polylines are passed through unchanged",
+  "reason": "Agent narrowed refinement to rectangles only and skipped the stated no-overlap requirement.",
+  "note": ""
+ },
+ {
+  "item_id": "L277",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent configured programmatic input; the specific UNIX socket and -vga flag are not in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L278",
+  "label": "ANCHORED",
+  "requirement_quote": "seq_align >= ceil(prompt_len/64)*64",
+  "evidence_quote": "ignoring the feasibility invariant that every request's seq_align assignment must be >= its own aligned prompt length",
+  "reason": "Agent's shape-selection plan ignored the stated seq_align lower bound for long prompts.",
+  "note": ""
+ },
+ {
+  "item_id": "L279",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Output path /app/solution.txt is not stated in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L280",
+  "label": "ANCHORED",
+  "requirement_quote": "regardless of the departure times of the various airlines",
+  "evidence_quote": "acted on the unverified assumption that all three airlines begin on the same day (offset=0)",
+  "reason": "Agent solved only the synchronized offset=0 case instead of the any-departure-times question.",
+  "note": ""
+ },
+ {
+  "item_id": "L281",
+  "label": "ANCHORED",
+  "requirement_quote": "Your image.c file should not read image.ppm.",
+  "evidence_quote": "abandoning algorithmic pixel generation",
+  "reason": "Agent replaced algorithmic generation with linking to image.ppm, sidestepping the stated constraint.",
+  "note": ""
+ },
+ {
+  "item_id": "L282",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at exact reconstruction but relied on a false belief about per-file line counts.",
+  "note": ""
+ },
+ {
+  "item_id": "L283",
+  "label": "ANCHORED",
+  "requirement_quote": "FL-Country-I",
+  "evidence_quote": "builds team_name from a 2-letter country abbreviation, not the full country",
+  "reason": "Agent substituted a 2-letter abbreviation for the country component the format specifies.",
+  "note": ""
+ },
+ {
+  "item_id": "L284",
+  "label": "ANCHORED",
+  "requirement_quote": "Install the RStan package (version 2.32.7)",
+  "evidence_quote": "Step 5 attempts to install cmdstanr (the wrong package)",
+  "reason": "Agent targeted cmdstanr and unpinned rstan instead of the stated RStan 2.32.7.",
+  "note": ""
+ },
+ {
+  "item_id": "L285",
+  "label": "ANCHORED",
+  "requirement_quote": "-> None",
+  "evidence_quote": "Step 2 writes run_tasks with return type '-> list[T]'",
+  "reason": "Agent implemented a list-returning signature instead of the stated None return type.",
+  "note": ""
+ },
+ {
+  "item_id": "L286",
+  "label": "ANCHORED",
+  "requirement_quote": "Each layer file must have corresponding L{depth}.sha",
+  "evidence_quote": "SHA files are named 'L{depth}.txt.sha' (not 'L{depth}.sha')",
+  "reason": "Agent's code used different filenames and path structure than the task text specified.",
+  "note": ""
+ },
+ {
+  "item_id": "L287",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Key format for departmentSizes is not specified in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L288",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at fixing numpy aliases but used a too-narrow grep pattern.",
+  "note": ""
+ },
+ {
+  "item_id": "L289",
+  "label": "ANCHORED",
+  "requirement_quote": "Modify the '/app/Makefile' so that the build process works",
+  "evidence_quote": "Agent modifies /app/src/Makefile in-place via sed rather than creating /app/Makefile",
+  "reason": "Agent edited /app/src/Makefile instead of the /app/Makefile the task named.",
+  "note": ""
+ },
+ {
+  "item_id": "L290",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at the rstan workflow but ran scripts without confirming installation succeeded.",
+  "note": ""
+ },
+ {
+  "item_id": "L291",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Output path /app/solution.txt is not stated in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L292",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Failure was a harness finish() call format issue not mentioned in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L293",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Output path and L2 term are not stated in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L294",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Cannot tell if exploration was abandonment of writing mystery.c or legitimate progress cut off by budget.",
+  "note": "No evidence of the agent's plan beyond exploration; FaaP's renderer claim is not in task text"
+ },
+ {
+  "item_id": "L295",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at downloading POV-Ray 2.2 but lacked knowledge of the legacy archive names; fabrication came later.",
+  "note": ""
+ },
+ {
+  "item_id": "L296",
+  "label": "ANCHORED",
+  "requirement_quote": "They should still pass after fixing compatibility issues",
+  "evidence_quote": "optimized for making a self-authored Python snippet succeed",
+  "reason": "Agent narrowed success to its own snippet and never checked the repository tests the task says must still pass.",
+  "note": ""
+ },
+ {
+  "item_id": "L297",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent was working toward the task but ran out of its step budget, which the task text never mentions.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L298",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at encoding the antibody's target but guessed the target wrongly without verification.",
+  "note": ""
+ },
+ {
+  "item_id": "L299",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Decisive mistake is lacking know-how to read the board image; fabricated positions came afterwards.",
+  "note": ""
+ },
+ {
+  "item_id": "L300",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "FaaP says constraints were invented, but they match the task text; actual unmet requirement is not described.",
+  "note": "FaaP's 'invented' constraints appear in the task text; the real failure cause is missing"
+ },
+ {
+  "item_id": "L301",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at reproducing the binary's output but misgeneralized a partial output sample.",
+  "note": ""
+ },
+ {
+  "item_id": "L302",
+  "label": "ANCHORED",
+  "requirement_quote": "The script should use MobileSAM to refine  *all* of the masks in the csv.",
+  "evidence_quote": "only calls MobileSAM for 'rectangle' type masks while passing all 'polyline' masks unchanged",
+  "reason": "Agent's script refined only rectangle masks and skipped overlap removal, narrowing the stated scope.",
+  "note": ""
+ },
+ {
+  "item_id": "L303",
+  "label": "ANCHORED",
+  "requirement_quote": "Additionally, there should be no overlap",
+  "evidence_quote": "processes each mask independently with no overlap-prevention logic",
+  "reason": "Agent's script omitted the stated no-overlap requirement from the start.",
+  "note": ""
+ },
+ {
+  "item_id": "L304",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "STFT on the WAV-derived signal is not stated in the task text; agent followed the written pipeline.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L305",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent implemented BFS as asked; the goal-in-deepest-layer expectation is not in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L306",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Server on 0.0.0.0 still serves localhost:8080; the expected registration pattern and artifact path are not in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L307",
+  "label": "ANCHORED",
+  "requirement_quote": "Parallelize a de Bruijn graph construction and traversal algorithm for genome assembly using Unified Parallel C (UPC).",
+  "evidence_quote": "I'll implement the parallel version using standard pthreads instead of UPC.",
+  "reason": "Agent replaced the required UPC implementation with pthreads.",
+  "note": ""
+ },
+ {
+  "item_id": "L308",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at building POV-Ray 2.2 but misread broken command output and lacked build know-how.",
+  "note": ""
+ },
+ {
+  "item_id": "L309",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Using mteb is only a hint that it is installed; the missing prompt handling is not in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L310",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "The /app/solution.txt output path is not stated in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L311",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Section scope and unsigned value type are not specified in the task text; agent aimed at extracting memory values.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L312",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at a compatible encoder but lacked knowledge to mirror the decoder's arithmetic.",
+  "note": ""
+ },
+ {
+  "item_id": "L313",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at recovering rows but lacked knowledge of SQLite's binary format.",
+  "note": ""
+ },
+ {
+  "item_id": "L314",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Threshold and timeframe fields live only in the rules data file, not the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L315",
+  "label": "ANCHORED",
+  "requirement_quote": "You are NOT allowed to use triton.language.sum (tl.sum).",
+  "evidence_quote": "direct use of the explicitly forbidden `tl.sum` operation",
+  "reason": "Agent's kernel used tl.sum, which the task explicitly forbids.",
+  "note": ""
+ },
+ {
+  "item_id": "L316",
+  "label": "ANCHORED",
+  "requirement_quote": "Include the query, esci_label, product_locale, and product_title columns in the esci.jsonl file.",
+  "evidence_quote": "generate placeholder product titles based on the product_id",
+  "reason": "Agent replaced real product titles with made-up placeholders after a wrong belief about the dataset.",
+  "note": ""
+ },
+ {
+  "item_id": "L317",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at reading the checkpoint and vocabulary but held wrong beliefs about their formats.",
+  "note": ""
+ },
+ {
+  "item_id": "L318",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at converting the model but wrongly assumed the file was a TensorFlow GraphDef.",
+  "note": ""
+ },
+ {
+  "item_id": "L319",
+  "label": "ANCHORED",
+  "requirement_quote": "1. /app/alert.json with the following schema:",
+  "evidence_quote": "hardcoding output to the /app/reports/ subdirectory instead of /app/ root as required by the spec",
+  "reason": "Agent wrote outputs to /app/reports/ instead of the stated /app paths and did not echo 'invalid'.",
+  "note": ""
+ },
+ {
+  "item_id": "L320",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Description only says the agent skipped reading a spec; which stated ACL requirement failed is not identified.",
+  "note": "which requirement was unmet is not described"
+ },
+ {
+  "item_id": "L321",
+  "label": "ANCHORED",
+  "requirement_quote": "Your final output should be a binary executable called \"cli_tool\"",
+  "evidence_quote": "creates /app/cli_tool as a Python script",
+  "reason": "Agent delivered a Python script instead of the binary executable the task names.",
+  "note": ""
+ },
+ {
+  "item_id": "L322",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent misread frotz's root refusal as a successful launch; fabrication came later.",
+  "note": ""
+ },
+ {
+  "item_id": "L323",
+  "label": "ANCHORED",
+  "requirement_quote": "You are NOT allowed to use triton.language.sum (tl.sum).",
+  "evidence_quote": "explicitly use 'tl.sum(x * x, axis=0)' — the forbidden tl.sum API",
+  "reason": "Agent's kernel used the explicitly forbidden tl.sum.",
+  "note": ""
+ },
+ {
+  "item_id": "L324",
+  "label": "ANCHORED",
+  "requirement_quote": "all you should have to do is generate the ramfs with `gen_init_cpio` and run qemu",
+  "evidence_quote": "There is no mention of ramfs/initramfs generation, showing the agent has already omitted this required step from its plan.",
+  "reason": "Agent's plan omitted generating the initramfs with gen_init_cpio and booting in QEMU.",
+  "note": ""
+ },
+ {
+  "item_id": "L325",
+  "label": "ANCHORED",
+  "requirement_quote": "You must use MobileSAM, you can not use the original SAM model.",
+  "evidence_quote": "installs the original `segment-anything` from Facebook Research explicitly as a substitute for MobileSAM",
+  "reason": "Agent substituted the original SAM for the required MobileSAM.",
+  "note": ""
+ },
+ {
+  "item_id": "L326",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at finding the answer but chose an ineffective local search; the task does not state how to look it up.",
+  "note": ""
+ },
+ {
+  "item_id": "L327",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent was working toward add_channels but spent its step budget on environment setup.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L328",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at reproducing the image but wrongly inferred it was a gradient with dithering.",
+  "note": ""
+ },
+ {
+  "item_id": "L329",
+  "label": "ANCHORED",
+  "requirement_quote": "The file chess_board.png has an image of a chess board. It is currently white to move. Write the best move for white to play to /app/move.txt",
+  "evidence_quote": "abandoning any plan to extract the real position from the image",
+  "reason": "Agent's first plan used a made-up position instead of the board in chess_board.png.",
+  "note": ""
+ },
+ {
+  "item_id": "L330",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Explanation blames ignoring the tl.sum ban, but the quote names the echo-per-line writing strategy as decisive.",
+  "note": "decisive mistake conflicts between explanation and quote"
+ },
+ {
+  "item_id": "L331",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at NumPy compatibility but missed deprecated aliases in ccomplexity.pyx.",
+  "note": ""
+ },
+ {
+  "item_id": "L332",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent met the goal, then broke it with a misguided cleanup that ignored passing tests.",
+  "note": ""
+ },
+ {
+  "item_id": "L333",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "SGDRegressor is a linear regression model; the specific LinearRegression class is not named in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L334",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Determinism patches needed to match the reference render are not stated in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L335",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Decisive mistake is inability to parse the board image; the arbitrary move followed from that.",
+  "note": ""
+ },
+ {
+  "item_id": "L336",
+  "label": "ANCHORED",
+  "requirement_quote": "while keeping the same interface",
+  "evidence_quote": "edits sum_array.h to remove the 'constexpr' keyword from the function signature",
+  "reason": "Agent dropped constexpr, violating the stated requirement to keep the same interface.",
+  "note": ""
+ },
+ {
+  "item_id": "L337",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "The solution.txt output path is never stated in the task text; the agent pursued the stated optimization goal.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L338",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Task says rows are moves but also numbers steps from 0; the layer stop-at-goal rule is not in the text.",
+  "note": "Unclear whether a step-0 start row violates the text; layer termination rule absent from task text"
+ },
+ {
+  "item_id": "L339",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at counting call sites but misread the log file's data format, not the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L340",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Explanation blames incident-report directory (not in task text) while mistake quote cites alert/report schema; decisive mistake is ambiguous.",
+  "note": "Explanation and mistake_quote describe different mistakes"
+ },
+ {
+  "item_id": "L341",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent chose the right approach but introduced two coding bugs in the SVD completion.",
+  "note": ""
+ },
+ {
+  "item_id": "L342",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent used the specified model; using the mteb interface is only a hint ('installed'), not a stated requirement.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L343",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed to speedrun Zork but relied on wrong memorized game knowledge.",
+  "note": ""
+ },
+ {
+  "item_id": "L344",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at a framework-level SSTI fix but lacked knowledge of the correct mitigation.",
+  "note": ""
+ },
+ {
+  "item_id": "L345",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent attempted to solve the stated math problem but used an incorrect formula.",
+  "note": ""
+ },
+ {
+  "item_id": "L346",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Task text only asks for similar data; the matrix-completion expectation is not stated.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L347",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Decisive mistake is mishandling YouTube's bot-check environment obstacle, not the requirement.",
+  "note": ""
+ },
+ {
+  "item_id": "L348",
+  "label": "ANCHORED",
+  "requirement_quote": "all you should have to do is generate the ramfs with `gen_init_cpio`",
+  "evidence_quote": "instead it jumped directly to creating a custom initramfs using standard cpio",
+  "reason": "Agent replaced the instructed gen_init_cpio/initramfs.list method with its own cpio-built initramfs.",
+  "note": ""
+ },
+ {
+  "item_id": "L349",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "The solution.txt output path and optimality tolerance are not in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L350",
+  "label": "ANCHORED",
+  "requirement_quote": "while fixing any Numpy compatibility issues so it works with my existing Numpy (2.3.0) versions",
+  "evidence_quote": "The agent attempted to downgrade numpy to 2.0.0 instead of patching the Cython source files",
+  "reason": "Agent planned to install a different numpy version instead of making pyknotid work with the existing numpy.",
+  "note": ""
+ },
+ {
+  "item_id": "L351",
+  "label": "ANCHORED",
+  "requirement_quote": "Tell me how many deepseek tokens are there in the science domain",
+  "evidence_quote": "The agent assumed without verification that 'deepseek tokens' meant all three fields (problem, deepseek_reasoning, deepseek_solution)",
+  "reason": "Agent widened the counted scope beyond deepseek tokens by including the problem field.",
+  "note": ""
+ },
+ {
+  "item_id": "L352",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at programmatic input and web access; the specific UNIX socket is untold and noVNC is know-how.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L353",
+  "label": "ANCHORED",
+  "requirement_quote": "according to the Scandinavian MTEB leaderboard (i.e. highest Mean (Task)) as of August 2025",
+  "evidence_quote": "hardcode 'nb-ai-lab/sentence-bert-base-scandinavian-cased' with a comment explicitly acknowledging this is based on 'mid-2024' knowledge",
+  "reason": "Agent knowingly substituted mid-2024 knowledge for the August 2025 leaderboard the task asked for.",
+  "note": ""
+ },
+ {
+  "item_id": "L354",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "exact_match metric and test-split handling are oracle details; acc matches the task's stated scoring.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L355",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Explanation blames the skipped rebuild (stated) but the mistake quote cites the incomplete regex fix (know-how).",
+  "note": "Explanation and mistake_quote point to different decisive mistakes"
+ },
+ {
+  "item_id": "L356",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed to finish Zork but used incorrect game-geography knowledge.",
+  "note": ""
+ },
+ {
+  "item_id": "L357",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent used round(x, 2), aiming at two decimals, but Python float printing dropped the trailing zero.",
+  "note": ""
+ },
+ {
+  "item_id": "L358",
+  "label": "ANCHORED",
+  "requirement_quote": "Group \"research\": full rwx permissions (both current and default)",
+  "evidence_quote": "omits the required group:research:rwx and default:group:research:rwx entries",
+  "reason": "Agent's rewritten ACL template left out the stated research group entries.",
+  "note": ""
+ },
+ {
+  "item_id": "L359",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent's results file matches the stated schema; the missing training metrics are not in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L360",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at counting call sites but wrongly assumed the log file's trace delimiters.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L361",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Task only states URLs; the /var/www/html directory layout is not in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L362",
+  "label": "ANCHORED",
+  "requirement_quote": "You should use the Qwen2.5-1.5B-Instruct tokenizer",
+  "evidence_quote": "writes token_counter.py using 'Qwen/Qwen2-1.5B-Instruct' instead of the task-specified 'Qwen2.5-1.5B-Instruct' tokenizer",
+  "reason": "Agent used the Qwen2 tokenizer instead of the specified Qwen2.5 tokenizer.",
+  "note": ""
+ },
+ {
+  "item_id": "L363",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at training but broke its environment by installing wheels for the wrong Python version.",
+  "note": ""
+ },
+ {
+  "item_id": "L364",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed to read the position from the image but wrongly assumed a FEN was embedded in metadata.",
+  "note": ""
+ },
+ {
+  "item_id": "L365",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Task text only asks for similar data; the matrix-completion expectation is not stated.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L366",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at a faster C implementation but lacked vectorization know-how.",
+  "note": ""
+ },
+ {
+  "item_id": "L367",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at an equivalent optimized query but could not verify equivalence.",
+  "note": ""
+ },
+ {
+  "item_id": "L368",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at counting call sites but misread the leading integer in the log data format.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L369",
+  "label": "ANCHORED",
+  "requirement_quote": "sequence should encode the protein for which the antibody was designed for",
+  "evidence_quote": "used a generic antibody-binding scaffold instead of the antigen-targeted protein",
+  "reason": "Agent hardcoded generic binders and unverified fluorophores instead of the stated component requirements.",
+  "note": ""
+ },
+ {
+  "item_id": "L370",
+  "label": "ANCHORED",
+  "requirement_quote": "The file chess_board.png has an image of a chess board. It is currently white to move. Write the best move for white to play",
+  "evidence_quote": "uses engine.play(chess.Board()) on the default starting position rather than the actual board image",
+  "reason": "Agent substituted the default starting position for the position in the given image.",
+  "note": ""
+ },
+ {
+  "item_id": "L371",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at a winning warrior but lacked Redcode-94 knowledge.",
+  "note": ""
+ },
+ {
+  "item_id": "L372",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent used the specified model; the mteb interface is only mentioned as installed, not required.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L373",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Task text only asks for similar data; the matrix-completion expectation is not stated.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L374",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Quote shows an OCR attempt at the real board, but explanation says piece types were assigned by made-up heuristics.",
+  "note": "Unclear whether decisive plan targeted the real image or a fabricated position"
+ },
+ {
+  "item_id": "L375",
+  "label": "ANCHORED",
+  "requirement_quote": "It should read the .ckpt and the .bpe file.",
+  "evidence_quote": "replacing all model weight initialization with 'init_model()' that uses rand() instead of reading from the gpt2-124M.ckpt file",
+  "reason": "Agent dropped checkpoint loading and substituted random weights to meet the size limit.",
+  "note": ""
+ },
+ {
+  "item_id": "L376",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed to build with gfortran but used a bad flag and misread the build output.",
+  "note": ""
+ },
+ {
+  "item_id": "L377",
+  "label": "UNCLEAR",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Cannot tell if test.c was a scratch prototype or the intended deliverable; the main failure looks like wrong output.",
+  "note": "Unclear whether wrong filename was a dropped requirement or exploratory file"
+ },
+ {
+  "item_id": "L378",
+  "label": "ANCHORED",
+  "requirement_quote": "The file chess_board.png has an image of a chess board.",
+  "evidence_quote": "No attempt was made to read or decode the image before committing to this guess.",
+  "reason": "Agent guessed a generic opening move instead of the best move for the imaged position.",
+  "note": ""
+ },
+ {
+  "item_id": "L379",
+  "label": "ANCHORED",
+  "requirement_quote": "Should reconstruct the original file structure and content exactly",
+  "evidence_quote": "focusing only on the file content reconstruction part",
+  "reason": "Decompressor plan covered only content, dropping the required exact structure restoration (artifact cleanup).",
+  "note": ""
+ },
+ {
+  "item_id": "L380",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "The required /app/solution.txt output file is never named in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L381",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at the right stats but its grep/paste pipeline was buggy.",
+  "note": ""
+ },
+ {
+  "item_id": "L382",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed to finish Zork but lacked correct knowledge of item locations.",
+  "note": ""
+ },
+ {
+  "item_id": "L383",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at the best move but lacked know-how to parse the board image.",
+  "note": ""
+ },
+ {
+  "item_id": "L384",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at a matching encoder but implemented arithmetic coding incorrectly.",
+  "note": ""
+ },
+ {
+  "item_id": "L385",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Expected three-decimal precision is not stated in the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L386",
+  "label": "ANCHORED",
+  "requirement_quote": "Configure QEMU to use VNC display :1",
+  "evidence_quote": "choosing to switch to :2 to avoid a perceived port conflict",
+  "reason": "Agent knowingly switched VNC to display :2 instead of the required display :1.",
+  "note": ""
+ },
+ {
+  "item_id": "L387",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Expected departmentSizes keys and metadata values come from schema/tests, not the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L388",
+  "label": "ANCHORED",
+  "requirement_quote": "Write me a dependency-free C file that samples from the model with arg-max sampling",
+  "evidence_quote": "writes a gpt2.c that prints placeholder tokens without reading the checkpoint or implementing transformer inference",
+  "reason": "Agent declared the task infeasible and replaced real model sampling with a placeholder.",
+  "note": ""
+ },
+ {
+  "item_id": "L389",
+  "label": "ANCHORED",
+  "requirement_quote": "Parallelize a de Bruijn graph construction and traversal algorithm for genome assembly using Unified Parallel C (UPC)",
+  "evidence_quote": "I'll focus on creating a simpler parallel implementation using pthreads directly, which doesn't require the UPC compiler.",
+  "reason": "Agent abandoned the required UPC implementation and substituted pthreads.",
+  "note": ""
+ },
+ {
+  "item_id": "L390",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Telnet monitor does allow programmatic keyboard input; the UNIX socket path is never named in the task.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L391",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at the best move but lacked vision tooling and know-how.",
+  "note": ""
+ },
+ {
+  "item_id": "L392",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed to finish Zork but lacked knowledge of the game map.",
+  "note": ""
+ },
+ {
+  "item_id": "L393",
+  "label": "ANCHORED",
+  "requirement_quote": "RMS-normalize the dithered signal to 0.2 ± 0.002.",
+  "evidence_quote": "which peak-normalizes after RMS normalization (destroying RMS=0.2)",
+  "reason": "Agent's design adds peak normalization, so even a perfect execution misses the stated 0.2 RMS target.",
+  "note": ""
+ },
+ {
+  "item_id": "L394",
+  "label": "ANCHORED",
+  "requirement_quote": "You should make sure that the peak emission/excitation of the donor/acceptor match the filter",
+  "evidence_quote": "without querying FPBase or any spectral database to verify the 505nm excitation/610nm emission requirements",
+  "reason": "Agent guessed donor/acceptor identities instead of matching the filter cube via fpbase as required.",
+  "note": ""
+ },
+ {
+  "item_id": "L395",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent targeted the right GC bug area but misdiagnosed it and applied a wrong fix.",
+  "note": ""
+ },
+ {
+  "item_id": "L396",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Plan was correct; a spurious rounding call was a code-generation bug.",
+  "note": ""
+ },
+ {
+  "item_id": "L397",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at a Triton kernel but lacked knowledge of interpreter constraints.",
+  "note": ""
+ },
+ {
+  "item_id": "L398",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Task only says mteb is installed; agent used the stated model, failing on prompt prefixes.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L399",
+  "label": "ANCHORED",
+  "requirement_quote": "You should use the Qwen2.5-1.5B-Instruct tokenizer",
+  "evidence_quote": "installs tiktoken to use gpt2 encoding instead of the Qwen2.5-1.5B-Instruct tokenizer specified by the task",
+  "reason": "Agent replaced the required Qwen2.5 tokenizer with gpt2 tiktoken.",
+  "note": ""
+ },
+ {
+  "item_id": "L400",
+  "label": "ANCHORED",
+  "requirement_quote": "RMS-normalize the dithered signal to 0.2 ± 0.002.",
+  "evidence_quote": "It believed the 0.2 RMS requirement applied only to the pre-quantization float signal, not to the signal that would actually be saved and evaluated.",
+  "reason": "Agent narrowed the RMS 0.2 requirement to the float signal and added peak normalization violating it.",
+  "note": ""
+ },
+ {
+  "item_id": "L401",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Using the mteb interface is only a hint (installed), not a stated requirement.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L402",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed to reproduce the image but lacked insight that it was ray-traced.",
+  "note": ""
+ },
+ {
+  "item_id": "L403",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at conversion but wrongly assumed the file was ONNX.",
+  "note": ""
+ },
+ {
+  "item_id": "L404",
+  "label": "ANCHORED",
+  "requirement_quote": "The server should accept password authentication with the password \"password\".",
+  "evidence_quote": "The agent pivoted to key-based SSH auth at step 35 to workaround interactive password prompts",
+  "reason": "Agent switched to key-based SSH auth instead of the required password authentication.",
+  "note": ""
+ },
+ {
+  "item_id": "L405",
+  "label": "ANCHORED",
+  "requirement_quote": "Maximum 30 files or folders in each directory",
+  "evidence_quote": "compress.py created with flat part_* layout, creating hundreds of subdirs at root, violating <=30 constraint",
+  "reason": "Agent's chosen flat layout itself puts hundreds of folders at root, violating the 30-entry limit.",
+  "note": ""
+ },
+ {
+  "item_id": "L406",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at the task but wrongly read a binary PNG as text.",
+  "note": ""
+ },
+ {
+  "item_id": "L407",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Actual domain labels and deepseek fields are only in the README, not the task text.",
+  "note": "implicit"
+ },
+ {
+  "item_id": "L408",
+  "label": "ANCHORED",
+  "requirement_quote": "My plan is to use `zsh` as the default shell",
+  "evidence_quote": "The agent's plan never includes this requirement",
+  "reason": "Agent never planned to make zsh the default shell as the task asked.",
+  "note": ""
+ },
+ {
+  "item_id": "L409",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent misidentified the SMILES molecule, a domain-knowledge error.",
+  "note": ""
+ },
+ {
+  "item_id": "L410",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at rstan sampling but broke the install by interrupting it.",
+  "note": ""
+ },
+ {
+  "item_id": "L411",
+  "label": "NOT",
+  "requirement_quote": "",
+  "evidence_quote": "",
+  "reason": "Agent aimed at the 75% threshold but misjudged 73 as passing.",
+  "note": ""
+ }
+]
