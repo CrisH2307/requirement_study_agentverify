@@ -45,6 +45,12 @@ report how many of FaaP's spec_neglect runs are implicit.
 measures). They are frozen together with the plan. Clarified in plan.md: a gap of exactly 0 does not count as
 "pointing the same way".
 
+**2026-09-30. First real Step 6 run, on the final labels (165 ANCHORED / 239 NOT / 7 UNCLEAR), before Kundi's
+agreement is in.** Result: % silent differs (35.8% vs 26.7%, range +0.03 to +18.4, all four checks pass);
+start step and fix window show no clear difference. The silent result is borderline: counting the 7 UNCLEAR as NOT
+moves the range to -0.2 to +18.2. From this point the 7 UNCLEAR labels are fixed and not revisited; both
+extremes are reported as a sensitivity check. The run is repeated after Step 4; if labels change, both runs are reported.
+
 2026-10-07: Added rules P1 (environment failure, judge what was delivered,
 note env) and P2 (quote a specific clause, never a header) after the second
 rater's comparison on L001 to L100. Cris's labels on affected rows will be
