@@ -44,3 +44,8 @@ report how many of FaaP's spec_neglect runs are implicit.
 `scripts/step6_compare.py` implement docs/plan.md and were tested only with `--selftest` (fake labels, scrambled
 measures). They are frozen together with the plan. Clarified in plan.md: a gap of exactly 0 does not count as
 "pointing the same way".
+
+2026-10-07: Added rules P1 (environment failure, judge what was delivered,
+note env) and P2 (quote a specific clause, never a header) after the second
+rater's comparison on L001 to L100. Cris's labels on affected rows will be
+relabeled in round 2 (WP0).
