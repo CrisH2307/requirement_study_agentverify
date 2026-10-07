@@ -1,0 +1,44 @@
+Rows compared: 50
+
+Three labels (ANCHORED / NOT / UNCLEAR): same label on 38.0% of rows, Cohen's kappa = 0.07
+ANCHORED or not:                        same label on 68.0% of rows, Cohen's kappa = 0.14
+Target (docs/plan.md): kappa >= 0.61 -> NOT MET: fix the guide using the disagreements, relabel, report both rounds
+
+Who chose what (rows = Cris, columns = Kundi):
+            ANCHORED       NOT   UNCLEAR
+ANCHORED           3         0         2
+NOT                8         7         7
+UNCLEAR            6         8         9
+
+Disagreements (item: Cris vs Kundi):
+  L012: NOT vs ANCHORED
+  L014: NOT vs ANCHORED
+  L018: UNCLEAR vs NOT
+  L023: UNCLEAR vs ANCHORED
+  L033: NOT vs UNCLEAR
+  L064: NOT vs UNCLEAR
+  L070: NOT vs UNCLEAR
+  L082: UNCLEAR vs ANCHORED
+  L109: NOT vs UNCLEAR
+  L112: UNCLEAR vs ANCHORED
+  L121: UNCLEAR vs NOT
+  L122: ANCHORED vs UNCLEAR
+  L144: NOT vs UNCLEAR
+  L145: NOT vs UNCLEAR
+  L150: UNCLEAR vs NOT
+  L183: NOT vs ANCHORED
+  L188: NOT vs ANCHORED
+  L193: UNCLEAR vs NOT
+  L195: UNCLEAR vs NOT
+  L196: UNCLEAR vs NOT
+  L203: UNCLEAR vs NOT
+  L218: NOT vs UNCLEAR
+  L221: UNCLEAR vs ANCHORED
+  L222: ANCHORED vs UNCLEAR
+  L233: NOT vs ANCHORED
+  L240: UNCLEAR vs ANCHORED
+  L275: UNCLEAR vs ANCHORED
+  L301: NOT vs ANCHORED
+  L343: NOT vs ANCHORED
+  L359: NOT vs ANCHORED
+  L372: UNCLEAR vs NOT

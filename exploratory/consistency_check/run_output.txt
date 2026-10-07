@@ -1,0 +1,27 @@
+labels_draft.csv: 998 rows, 587 fully empty (skipped), 411 kept
+Count check (found / expected); 'implicit' counted on NOT rows, case-insensitive:
+  runs             411 / 411
+  tasks             81 / 81
+  ANCHORED         165 / 165
+  NOT              239 / 239
+  UNCLEAR            7 / 7
+  implicit_exact    40 / 40
+  implicit_any      42 / 42
+  other labels: {}
+  NOT rows with 'implicit' inside a longer note: ['L340', 'L354']
+  NON-NOT rows whose note contains 'implicit' (needs a human look): [('L048', 'ANCHORED', 'implicit'), ('L319', 'ANCHORED', 'If the task text explicitly requested /a')]
+Counts match.
+
+Tasks checked: 81 (411 runs)
+Tasks flagged: 58 (354 runs)
+  by mixed labels: 56
+  by different ANCHORED quotes: 19
+Tasks not flagged: 23 (57 runs)
+
+Wrote exploratory/consistency_check/review_flagged.csv
+Wrote exploratory/consistency_check/consistency_list.csv
+
+Flagged tasks per verdict (tasks / runs):
+  likely_inconsistent   23 tasks / 188 runs
+  different_failures    27 tasks / 119 runs
+  cannot_tell            8 tasks /  47 runs

@@ -1,0 +1,7 @@
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Data and studies}{6}{0}{2}
+\beamer@sectionintoc {3}{Research questions}{7}{0}{3}
+\beamer@sectionintoc {4}{RQ1 progress}{8}{0}{4}
+\beamer@sectionintoc {5}{What we expect from RQ1}{16}{0}{5}
+\beamer@sectionintoc {6}{From RQ1 to RQ2 and RQ3}{17}{0}{6}
+\beamer@sectionintoc {7}{Plan}{18}{0}{7}

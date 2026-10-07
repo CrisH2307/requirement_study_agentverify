@@ -1,0 +1,4 @@
+cli_trajectory_analysis/
+_to_delete/
+.DS_Store
+__pycache__/
